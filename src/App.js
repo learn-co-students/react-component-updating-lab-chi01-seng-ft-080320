@@ -14,6 +14,13 @@ class App extends Component {
   componentDidMount() {
     this.handleAddTimer()
   }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.time === nextState.time) {
+      return false
+    }
+    return true
+  }
 
   render() {
     console.log(this.state.timerIDs);
